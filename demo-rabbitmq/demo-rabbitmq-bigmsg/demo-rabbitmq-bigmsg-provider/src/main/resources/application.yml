@@ -1,0 +1,16 @@
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 8081
+
+spring:
+  rabbitmq:
+    dynamic: true
+    host: localhost
+    port: 5672
+    username: admin
+    password: 123
+    virtual-host: /

@@ -1,0 +1,22 @@
+server:
+  port: 9201
+
+spring:
+  jackson:
+    time-zone: GMT+8
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123
+    virtual-host: /
+    cache:
+      channel:
+        size: 10                #缓存中保持的channel数量，包括listener的数量
+        checkout-timeout: 500ms #从缓存中获取一个channel的超时时间，单位毫秒；如果为0，则总是创建一个新channel
+    listener:
+      simple:
+        acknowledge-mode: auto #表示消息确认方式，其有三种配置方式，分别是none、manual和auto；默认auto
+        concurrency: 1 #最小的消费者数量
+        max-concurrency: 1 #最大的消费者数量
+        prefetch: 10 #指定一个请求能处理多少个消息

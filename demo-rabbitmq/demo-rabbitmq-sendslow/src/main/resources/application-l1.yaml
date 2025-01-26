@@ -1,0 +1,24 @@
+
+server:
+  port: 8101
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123
+    virtual-host: test
+    cache:
+      channel:
+        size: 200
+        checkout-timeout: 3s
+    listener:
+      simple:
+        concurrency: 100
+        max-concurrency: 100
+        prefetch: 10
+
+project:
+  listener:
+    enabled: true

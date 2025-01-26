@@ -1,0 +1,19 @@
+
+server:
+  port: 8001
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123
+    virtual-host: test
+    dynamic: true
+    cache:
+      channel:
+        size: 50
+        checkout-timeout: 3s
+    template:
+      retry:
+        enabled: true

@@ -1,0 +1,21 @@
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 8082
+
+spring:
+  rabbitmq:
+    dynamic: true
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123
+    virtual-host: /
+    listener:
+      simple:
+        concurrency: 1
+        max-concurrency: 1
+        prefetch: 10
